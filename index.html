@@ -3,17 +3,72 @@
 <head>
 	<meta charset="utf-8">
 	<title>Test page</title>
+	<link rel="shortcut icon" type="image/png" href="/icon/favicon-16x16.png">
+	<style type="text/css">
+		*{
+			box-sizing:border-box; 
+		}
+		body {
+			text-align: justify;
+		}
+		#hover_example {
+			text-align: center;
+			width: 100%;
+			display: block;
+		}
+		#hover_example:hover, #hover_example:active {
+			color: purple;
+			background-color: black;
+		}
+		#box1, #box2 {
+			height: 100px;
+			width: 100px;
+			border: 1px solid black;
+			margin: auto;
+			padding : 10px;
+			background-color: #7DCEA0;
+		}
+		#box2 {
+			overflow: auto;
+		}
+		#column1, #column2 {
+			height: 200px;
+			width: 50%;
+			border: 1px solid black;
+			padding : 10px;
+			background-color: #D2B4DE;
+			float: left;
+		}
+		#BoostHelp {
+			margin : auto;
+			margin-top: 15px;
+			padding: 20px;
+			width: 250px;
+			text-align: center;
+			background-color: #FAD7A0;
+		}
+		a:link, li a:link{
+			text-decoration: none;
+		}
+		#BoostHelp:active, #BoostHelp:hover {
+			background-color: #EB984E;
+		}
+		ul li span {
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 <h1>Some notes about the things that I have learned.</h1>
-<hr>
 	<section>
 		<h2>Content table</h2>
 		<ul>
 			<li><a href="#module1">Module 1</a></li>
+			<li><a href="#module2">Module 2</a></li>
 		</ul>
 	</section>
 	<h3 id="module1">Module 1</h3>
+	<hr>
 	<section>
 		<article>
 			<div> 
@@ -84,6 +139,7 @@
 						</div>
 					</li>
 				</ul>
+			</p>
 			<p>
 				The last thing that I want to talk about is inserting video, images and hyperlinks. We can insert them using their tags.
 				<ul>
@@ -96,7 +152,6 @@
 					<li>
 						For images there not much to say, just try to initialize the width and height of it.
 						<div>
-							<hr>
 							<br> Example: <br>
 							<img src="https://laverdadnoticias.com/__export/1669617887840/sites/laverdad/img/2022/11/28/la_waifu_de_la_temporada_estx_en_el_nuevo_anime_de_bocchi_the_rockx.jpg_2125252991.jpg" alt="An url type example: Bocchi the Rock" title="An url type example: Bocchi the Rock" width="560" height="315">
 							<br>
@@ -107,7 +162,6 @@
 					<li>
 						Same with videos:
 						<div>
-							<hr>
 							<br><iframe width="560" height="315" src="https://www.youtube.com/embed/xfr64zoBTAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 							</iframe>
 							<aside>Chubaited by url</aside>
@@ -121,6 +175,142 @@
 						</div>
 					</li>
 				</ul>
+			</p>
+		</article>
+	</section>
+	<section style="font-family: Arial;">
+		<h3 id = "module2"> Module 2 </h3>
+		<hr>
+		<p>
+			In this section I will be talking about the things that I've learn in module 2, basically css and a bit of Boostrap. I will be using some CSS (very basic) stating by this module. I wont be styling the previous module because I'm lazy.
+		</p>
+		<p>
+			Basically CSS is uses to give the structure (HTML) some design.<span style="background-color: #a28089;"> As we can see here. </span>
+		</p>
+		<article>
+			<p>
+			When it comes to the declarations of the CSS, it can be at the beginning, inside head or externally inserted (a .css file) or directly inside the tag. The tag for css is "style" and it's sytaxs consists in the declaration of the target followed by "{"" and properties that we want to give to the target. <br>
+			<div style="font-weight: bold;">Example</div>
+			<p style="background-color: #33E3FF;">
+				<span style="font-style: italic;">Hey I'm #a28089 and italic.</span>
+			</p>
+			Notice that in the declaration of a style it's possible to combine diferent targets. For example, we can target by class, by id, by tag or combining them. For example, we can associate classes with tags (the tags with the class "blabla" will have the propeties we asign). There's aswell other interesting declations. 
+			<ol>
+				<li><span style="font-weight: bold;">Direct child target:</span> When we want to target nested tags that are a direct child of it's parent, we can use this type of targeting. It's systaxs is:
+					<p style="text-align: center">
+						tag1 &gt; tag2: where tag2 is a direct child of tag1.
+					</p>
+				</li>
+				<li>
+					<span style="font-weight: bold">Non-direct target:</span>Similar to the previous one but including al the child, grandchilds of the parent. In another words, if tag2 is inside of tag1 somehow, it's targeted. It's sytaxs is:
+					<p style="text-align: center">
+						tag1 tag2: Where tag2 is inside of tag1.
+					</p>
+				</li>
+			</ol>
+			</p>
+			<aside>
+				One thing that I forgot to say is that when we apply a style to a tag, this style gets inheritated to it's decendents. So thats why in this module 2, the whole font is quite diferent than before in the module 1 (we are using right now Arial).
+			</aside>
+		</article>
+		<article>
+			Another thing that is worth to mention is the existence of pseudo-class selectors. These selectors decribes the type of actions required to style a tag. For example, when we need apply a diferent propetie to a element when the mouse is on him, we can use the pseudo class "hover". See the example below:
+			<div><a id = "hover_example" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">I'm the example</a></div>
+			<p>
+				The most uses ones are:
+				<ul>
+					<li><span>Link:</span> when it's a link</li>
+					<li><span>Visited:</span> when it's visited</li>
+					<li><span>Hover:</span>hover</li>
+					<li><span>Active:</span> Interesting class, it stands for the moment when something is clicked and holded</li>
+					<li><span>nth-child:</span>basically for list, the nth-element of a list</li>
+				</ul>
+			</p>
+		</article>
+		<article>
+			When it comes to conflict declaring. We only have to remember this order. The priority declarations are always the inline one, followed by the id ones, class ones and finally the tag ones. We can numerically give them values (1, 0) in the order that I've written before.
+		</article>
+		<article>
+			When it comes to the font size: we can use the % sign to give a relative size respect to the browser or we can use "em", which is accumulative, if the parent declaration is 2em and it's direct child is 2em aswell, the direct child will have 4em respect the original text.
+		</article>
+		<article>
+			When it comes to the box model, it's the hardest part to understand in this module. First of all, a box can have these basic properties
+			<ul>
+				<li><span>Padding:</span> with four arguments, top, left, bottom, right. If they have the same value, we can provide only time the size.</li>
+				<li><span>Border:</span> the border of a box, we can provide diferent arguments. Normally size and color</li>
+				<li><span>Margin:</span> the outside space</li>
+				<li><span>Width:</span> the size of the content or box.
+					<ul>
+						<li>it 's important to say here the fact that if we want width to afect the whole box, including all the borders and craps, we have to declare in styles the follow thing
+							<div style= "color: #a28089; text-align: center;"><br>box-sizing: border-box(otherwise by default content-box), with "*" as target (which stands for everything, every element of the html.</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			When it comes to margins, it's worth saying that the margins, when we all talking about horitzontal margins, when two margins encounters, we get a sum of the two margins. When it comes to horitzontal situations, the largest margin wins.
+			<aside> If by accident we specifie a height and width that can really make the text fit correctly, then by default the text with be visible and overflow. To make the text no visible or add a scroll bar (which commonly not a good idea) we can add specfie in styles a propertie called overflow. (visible, hidden, scroll, auto)
+			</aside>
+			<br> Now two example boxes. The first one will be a regular box and the second one a box with overflow.
+			<div> Here box 1</div>
+			<p id="box1">
+				
+			</p>
+			<div> Here box 2, where overflow is set to auto. </div>
+			<p id="box2">
+				I'm gonna fill the whole box buahhahahahahahahahahahaahhahahahhahahahahahaaaaaaaaaaaaaaaaaahaaaaaaaaaaaaaaaaahahahah.
+			</p><br>
+			It's worth mentioning that we can put images and configure the background-repeat if we want the imatge to repeat or no. There's no example here, first because I'm getting tired and second because it would just look like a regular insertion of a imatge (maybe some repetitions to make it even worst xd).
+		</article>
+		<article>
+			<br>
+			In this sections we will be talking about the floating technique, which consists in moving boxes. In order to make boxes move, we need to commands, first and obvious, float and a direction (left o right). And clear, to make sure that nothing get covered.
+			<aside style="font-style: italic; text-align: center;color: #a28089;">
+				<br>
+				When I say covered, we have to understand one thing: When we float a element, this element leave the orginal html flow, so other boxes may ignore him and cover him. To prevent that we use clear.
+			</aside>
+			<br> This float technique allows us to construct, for example, two column structures.
+			<div>
+			<p id = "column1">
+				Hey I'm Column 1.
+			</p>
+			<p id = "column2">
+				Hey I'm Column 2.
+			</p>
+			</div>
+			<p>
+				Another aspect which is a pain in the ass, hard to understand and apply is the relative and absolute element positioning. As you can see, large names means dificult. Both positioning is declared by saying position: (relative or absolute). Notice that html is relative.
+				<ul>
+					<li><span style="font-weight: bold">Relative positioning: </span> First declare that position is relative, then when we specifie top, left, right, or bottom. We move the box by these especifications and these especfications are respect the original position of the box. Notice that when we move the box, the element is still in the original flow of the html, so we can say that he's orginal position is still ocupied by himself. </li>
+					<li><span style="font-weight: bold">Absolute positioning: </span> First declare that position is absolute, then when we specifie top, left, right, or bottom. The only diference with the one whose above is that the movements we specifie are respect the container, the parent tag. If the parent container has a unespecified position, then the box will keep looking up for a especifie container. At last, the html, because it is naturally relative. Notice that when we offset the container the content is also ofssed.</li>
+				</ul>
+			</p>
+		</article>
+		<article>
+			<br> When it comes to Media Queries, these things are used to adapt the site to diferent devices, to create a responsive website. The syntax is the following.
+			<div style="text-align: center; color: #a28089;">  <br> @media (min-width or max-width) { style }. (We can use logic and to link properties max AND min). Media queries works like if statements. 
+			</div>
+			<aside style="text-align: center; color: #a28089; font-style: italic;"> <br>It's important to not overlap the breakpoints. Notice that we usually have to provide a base style.</aside>
+		</article>
+		<article>
+			<br> The reponsive design is based on columns, so is the boostrap that we will be using. It's common to have or divide our website in 12 columns. This way we can distribute diferent boxes width percentatge using media queries to adapt diferent divices. This will be the basics for Boostrap. Boostraps uses these 12 column structure to make a reponsive website.
+			<p>
+				We wont be including boostrap yet, but is worth knowing how columns in boostrap works. Later in module 3 we will try to get boostrap involved. 
+			</p>
+			<p>
+				<br> The columns in boostrap have the following syntanx:
+				<div style="text-align: center; font-style: italic; color: #a28089;"> col-SIZE-SPAN </div>
+				<ul>
+					<li>The size stands for size of the device, it can be xs, sm, md, lg.</li>
+					<li>The span stands for the number of columns that the box will occupie, from 1 to 12.</li>
+				</ul>
+			</p>
+			<aside>
+				It's worth knowing that for declaring columns we need to declare as parent rows, and before that a container. The row in boostrap is design to aline the text, basically to make the text more pleasant to the eyes. Notice that columns, row, container are classes of Boostrap.
+			</aside>
+			<aside>
+				Another thing to know is the fact that if you declare a "xs" size, then the span will always remains intact even we switch devices, in another words, if we want a double columns struct, even we make the browser bigger (use a laptop or simply making bigger the browser) the structure won't change. For the other sizes, if change the size of the browser, they will switch they structure in order to adapt the new size of the browser.
+			</aside>
+			<div id = "BoostHelp"><a style = "color: white; font-weight: bold;" href="https://getbootstrap.com/docs/5.1/layout/css-grid/" target="_blank"> Click me to see more </a></div>
 		</article>
 	</section>
 </body>
